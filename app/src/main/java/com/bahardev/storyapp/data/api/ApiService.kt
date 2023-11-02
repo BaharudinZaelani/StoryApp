@@ -36,4 +36,9 @@ interface ApiService {
 
     @GET("stories")
     suspend fun getStories(): ListStoryResponse
+
+    @GET("stories")
+    suspend fun getStoriesLocation(
+        @Query("location") loc: Int
+    ): ListStoryResponse
 }

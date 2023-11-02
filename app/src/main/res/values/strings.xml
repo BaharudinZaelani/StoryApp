@@ -24,4 +24,10 @@
     <string name="error_field_password">Password tidak boleh kurang dari 8 karakter</string>
     <string name="error_email">Email tidak boleh kosong!</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="custom_type">Custom</string>
 </resources>
