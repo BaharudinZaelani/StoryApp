@@ -13,6 +13,7 @@ import com.bahardev.storyapp.data.api.ApiConfig
 import com.bahardev.storyapp.data.pref.StoryItem
 import com.bahardev.storyapp.databinding.HomeBinding
 import com.bahardev.storyapp.view.ViewModelFactory
+import com.bahardev.storyapp.view.maps.MapsActivity
 import com.bahardev.storyapp.view.welcome.WelcomeActivity
 import kotlinx.coroutines.launch
 
@@ -43,9 +44,14 @@ class MainActivity: AppCompatActivity() {
         binding.addStory.setOnClickListener {
             startActivity(Intent(this@MainActivity, UploadStoryActivity::class.java))
         }
-        binding.logout.setOnClickListener {
-            lifecycleScope.launch {
-                viewModel.deleteSession()
+        binding.apply {
+            logout.setOnClickListener {
+                lifecycleScope.launch {
+                    viewModel.deleteSession()
+                }
+            }
+            maps.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MapsActivity::class.java))
             }
         }
     }
