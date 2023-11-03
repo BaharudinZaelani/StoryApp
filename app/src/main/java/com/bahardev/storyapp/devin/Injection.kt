@@ -1,6 +1,7 @@
 package com.bahardev.storyapp.devin
 
 import android.content.Context
+import com.bahardev.storyapp.data.StoryRepository
 import com.bahardev.storyapp.data.UserRepository
 import com.bahardev.storyapp.data.api.ApiConfig
 import com.bahardev.storyapp.data.pref.UserPreference
@@ -11,11 +12,8 @@ object Injection {
         val pref = UserPreference.getInstance(context.dataStore)
         return UserRepository.getInstance(pref)
     }
-//    fun provideNewsRepository(context: Context): NewsRepository {
-//        val apiService = ApiConfig().getApiService()
-//        val database = NewsDatabase.getInstance(context)
-//        val dao = database.newsDao()
-//        val appExecutors = AppExecutors()
-//        return NewsRepository.getInstance(apiService, dao, appExecutors)
-//    }
+    fun storyProvideRepository(token: String): StoryRepository {
+        val apiService = ApiConfig().getApiServiceAuth(token)
+        return StoryRepository(apiService)
+    }
 }

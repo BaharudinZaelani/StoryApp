@@ -33,5 +33,4 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
             return INSTANCE as ViewModelFactory
         }
     }
-
 }

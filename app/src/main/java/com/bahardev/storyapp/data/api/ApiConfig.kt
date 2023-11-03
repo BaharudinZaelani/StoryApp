@@ -21,12 +21,12 @@ class ApiConfig {
         return retrofit.create(ApiService::class.java)
     }
 
-    fun getApiServiceAuth(token: String = ""): ApiService {
+    fun getApiServiceAuth(token: String? = null): ApiService {
         val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val authInterceptor = Interceptor { chain ->
             val req = chain.request()
             val requestHeaders = req.newBuilder()
-                .addHeader("Authorization", token)
+                .addHeader("Authorization", token.toString())
                 .build()
             chain.proceed(requestHeaders)
         }

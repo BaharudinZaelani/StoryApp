@@ -16,7 +16,6 @@ import com.bahardev.storyapp.view.ViewModelFactory
 import com.bahardev.storyapp.view.main.MainActivity
 import com.bahardev.storyapp.view.main.MainViewModel
 import kotlinx.coroutines.launch
-import kotlin.Exception
 
 
 class LoginActivity: AppCompatActivity() {
