@@ -2,7 +2,6 @@ package com.bahardev.storyapp.view.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -36,7 +35,6 @@ class MainActivity: AppCompatActivity() {
                 finish()
             }
             val token = user.token
-            Log.d("ZAW", "token in model: $token")
             storyViewModel = StoryViewModelFactory(token).create(StoryViewModel::class.java)
             getStories()
         }

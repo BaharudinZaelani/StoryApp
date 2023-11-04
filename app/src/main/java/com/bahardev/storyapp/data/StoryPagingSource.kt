@@ -1,12 +1,16 @@
 package com.bahardev.storyapp.data
 
+import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bahardev.storyapp.data.api.ApiService
 import com.bahardev.storyapp.data.api.ListStoryItem
 
 class StoryPagingSource(private val apiService: ApiService) : PagingSource<Int, ListStoryItem>() {
-    private companion object {
+    companion object {
+        fun snapshot(items: List<ListStoryItem>): PagingData<ListStoryItem> {
+            return PagingData.from(items)
+        }
         const val INITIAL_PAGE_INDEX = 1
     }
     override fun getRefreshKey(state: PagingState<Int, ListStoryItem>): Int? {
